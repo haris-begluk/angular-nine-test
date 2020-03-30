@@ -1,28 +1,16 @@
+import { FirstComponent } from './components/home/first/first.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './../app-routing/app-routing.module';
 import { AuthorizationModule } from './../authorization/authorization.module';
-import { Routes, RouterModule } from '@angular/router';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { StudentComponent } from 'src/authorization/student/student.component';
-const routes: Routes = [
-  {
-      path: '',
-      component: StudentComponent
-  }
-];
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule, 
-    AuthorizationModule,
-    RouterModule.forRoot(routes)
 
-  ],
+@NgModule({
+  declarations: [AppComponent, HomeComponent, FirstComponent],
+  imports: [BrowserModule, AuthorizationModule, AppRoutingModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
