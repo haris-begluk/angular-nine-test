@@ -6,8 +6,8 @@
     <button  mat-button >Things to add</button>
 </span>
   <span> 
-    <a mat-button (click)="login()">Login</a>
-    <a mat-button>Logout</a>
+    <a *ngIf="!isLoggedIn" mat-button (click)="login()">Login</a>
+    <a *ngIf="isLoggedIn" mat-button (click)="logout()">Logout</a>
   </span>
 </mat-toolbar>
 </nav>

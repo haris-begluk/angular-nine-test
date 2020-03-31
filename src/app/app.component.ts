@@ -23,5 +23,7 @@ ngOnInit(){
 login(){ 
   this._authService.login();
 }
-
+logout(){
+  this._authService.logout();
+}
 }

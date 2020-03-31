@@ -27,6 +27,9 @@ export class AuthService {
 
   login() {
     return this._UserManager.signinRedirect();
+  } 
+  logout(){
+    this._UserManager.signoutRedirect();
   }
   isLoggedIn(): Promise<boolean> {
     return this._UserManager.getUser().then(user => {
@@ -37,5 +40,16 @@ export class AuthService {
       this._user = user;
       return userCurrent;
     });
+  } 
+  completeLogin(){
+    return this._UserManager.signinRedirectCallback().then(user => {
+      this._user = user; 
+      this._loginChangedSubject.next(!!user && !user.expired); 
+      return user;
+    });
+  } 
+  completeLogout(){ 
+    this._user = null;
+    return this._UserManager.signoutRedirectCallback();
   }
 }
