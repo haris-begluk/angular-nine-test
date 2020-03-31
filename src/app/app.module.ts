@@ -1,3 +1,4 @@
+import { HomeComponent } from './components/home/home.component';
 
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,14 +9,18 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
+    HttpClientModule,
     BrowserModule, 
     RouterModule, 
     BrowserAnimationsModule,
-    MatToolbarModule,MatMenuModule,MatSliderModule,MatButtonModule ],
+    MatToolbarModule,MatMenuModule,MatSliderModule,MatButtonModule,
+    AppRoutingModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

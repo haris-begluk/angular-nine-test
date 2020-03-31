@@ -1,15 +1,19 @@
-<mat-toolbar color="primary">
+<nav>
+<mat-toolbar color="warn">
   <span>Angular 9</span>
   <span class="navbar-fill">
     <button  mat-button >Things to add</button>
     <button  mat-button >Things to add</button>
 </span>
   <span> 
-    <button mat-button>Login</button>
-    <button mat-button>Logout</button>
+    <a mat-button (click)="login()">Login</a>
+    <a mat-button>Logout</a>
   </span>
 </mat-toolbar>
-
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
 
 
 
